@@ -32,3 +32,11 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: 'Azure イン オープン プラン1(da4f7ba7-d689-48ce-b087-7d3351500f8e)'
+    appType: 'webApp'
+    appName: 'selenium-testsite001'
+    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    deploymentMethod: 'auto'
